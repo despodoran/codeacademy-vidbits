@@ -10,7 +10,7 @@ function fillFormAndSubmit(video) {
 
 describe('User visits the video creation page', () => {
   describe('Add a new video', () => {
-    it('has an empty form initially', () => {
+    it('Has an empty form', () => {
       browser.url('/videos/create');
 
       assert.equal(browser.getText('#video-title'), '');

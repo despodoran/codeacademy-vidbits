@@ -9,8 +9,8 @@ function fillFormAndSubmit(video) {
 }
 
 describe('User visits the landing page', () => {
-  describe('empty on the initial visit', () => {
-    it('should contain no videos', async () => {
+  describe('Empty on the visit', () => {
+    it('Should have no videos', async () => {
       browser.url('/');
 
       assert.equal(browser.getText('#videos-container'), '');
@@ -18,7 +18,7 @@ describe('User visits the landing page', () => {
   });
 
   describe('With existing videos', () => {
-    it('should display them', async () => {
+    it('Should display them', async () => {
       const title = 'the new title';
       const video = buildVideoObject({'title': title});
 
@@ -59,8 +59,8 @@ describe('User visits the landing page', () => {
     });
   });
 
-  describe('Has access to creation page', () => {
-    it('has a link to /videos/create', async () => {
+  describe('Has access to creation', () => {
+    it('link to /videos/create', async () => {
       browser.url('/');
 
       browser.click('a[href="/videos/create"]');

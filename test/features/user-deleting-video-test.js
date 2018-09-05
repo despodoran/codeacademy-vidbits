@@ -10,9 +10,9 @@ function fillFormAndSubmit(video) {
   browser.click('#submit-video');
 }
 
-describe('User deleting video', () => {
-  describe('after deletion', () => {
-    it('should remove the video from the list', async () => {
+describe('User delete video', () => {
+  describe('After delete', () => {
+    it('Remove the video from the list', async () => {
       const title = 'the new title';
       const video = buildVideoObject({'title': title, 'videoUrl': generateRandomUrl()});
 
