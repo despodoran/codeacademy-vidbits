@@ -9,7 +9,7 @@ describe('GET /videos', () => {
   beforeEach(connectDatabaseAndDropData);
   afterEach(disconnectDatabase);
 
-  it('returns the videos in the database', async () => {
+  it('Rreturns the videos in the database', async () => {
     const videoToCreate = buildVideoObject();
 
     const response = await request(app)
@@ -28,7 +28,7 @@ describe('GET /videos/:id/edit', () => {
   beforeEach(connectDatabaseAndDropData);
   afterEach(disconnectDatabase);
 
-  it('renders the edit form with the video values populated', async () => {
+  it('Renders the edit form with the video values populated', async () => {
     let videoToCreate = buildVideoObject();
 
     const responsePost = await request(app)
@@ -51,7 +51,7 @@ describe('POST /videos/:id/updates', () => {
   beforeEach(connectDatabaseAndDropData);
   afterEach(disconnectDatabase);
 
-  it('updates the video', async () => {
+  it('Updates the video', async () => {
     let videoToCreate = buildVideoObject();
     let updatedVideo = buildVideoObject({
       'title': 'title',
@@ -77,7 +77,7 @@ describe('POST /videos/:id/updates', () => {
     assert.include(response.text, updatedVideo.videoUrl);
   });
 
-  it('does NOT updates the video when the record is invalid', async () => {
+  it('Does NOT updates the video when the record is invalid', async () => {
     let videoToCreate = buildVideoObject();
     let updatedVideo = buildVideoObject({
       'description': 'new desc',
@@ -103,7 +103,7 @@ describe('POST /videos/:id/updates', () => {
     assert.equal(findElementBySelector(response.text, '#video-url').value, videoToCreate.videoUrl);
   });
 
-  it('responds with a 400 status when the record is invalid', async () => {
+  it('Responds with a 400 status when the record is invalid', async () => {
     let videoToCreate = buildVideoObject();
     let updatedVideo = buildVideoObject({
       'description': 'new desc',
@@ -127,7 +127,7 @@ describe('POST /videos/:id/updates', () => {
     assert.equal(response.status, 400);
   });
 
-  it('renders the edit form when the record is invalid', async () => {
+  it('Renders the edit form when the record is invalid', async () => {
     let videoToCreate = buildVideoObject();
     let updatedVideo = buildVideoObject({
       'description': 'new desc',
@@ -153,7 +153,7 @@ describe('POST /videos/:id/updates', () => {
     assert.notEqual(findElementBySelector(response.text, '#video-url'), null);
   });
 
-  it('redirects to the show page upon updating', async () => {
+  it('Redirects to the show page upon updating', async () => {
     let videoToCreate = buildVideoObject();
     let updatedVideo = buildVideoObject({
       'title': 'title',
@@ -182,7 +182,7 @@ describe('GET /videos/:id', () => {
   beforeEach(connectDatabaseAndDropData);
   afterEach(disconnectDatabase);
 
-  it('renders the video in the database', async () => {
+  it('Renders the video in the database', async () => {
     let videoToCreate = buildVideoObject();
 
     const responsePost = await request(app)
@@ -206,7 +206,7 @@ describe('POST /videos/:id/deletions', () => {
   beforeEach(connectDatabaseAndDropData);
   afterEach(disconnectDatabase);
 
-  it('deletes the video', async () => {
+  it('Deletes the video', async () => {
     let videoToCreate = buildVideoObject();
 
     const responsePost = await request(app)
